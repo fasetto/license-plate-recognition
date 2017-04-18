@@ -1,0 +1,45 @@
+﻿<Window x:Class="LPlateRecognition.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LPlateRecognition.UI"
+        mc:Ignorable="d"
+        Drop="Window_Drop" 
+        AllowDrop="True"
+        Title="LPlateRecognitionSample -- Drag and drop to recognize.." Height="350" Width="525">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="10">
+            <TextBox Height="44"
+                     IsReadOnly="True"
+                     FontSize="30"
+                     FontWeight="Light"
+                     TextWrapping="Wrap"
+                     Text="{Binding LicensePlate}"
+                     >
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="PART_ContentHost"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Image Source="{Binding Image}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10">
+            <Image Source="{Binding ImageOrigin}"/>
+        </StackPanel>
+    </Grid>
+</Window>
