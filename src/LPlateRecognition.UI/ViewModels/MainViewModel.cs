@@ -21,7 +21,9 @@ namespace LPlateRecognition.UI.ViewModels
 
         public MainViewModel()
         {
-            _licensePlateDetector = new LicensePlateDetector(@"C:\Users\serka\Desktop\tessdata");
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+            _licensePlateDetector = new LicensePlateDetector(path + "\\..\\..\\tessdata");
         }
 
         public string LicensePlate

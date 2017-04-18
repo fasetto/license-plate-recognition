@@ -27,7 +27,7 @@ namespace LPlateRecognition.UI.Models
         /// </param>
         public LicensePlateDetector(string dataPath)
         {
-            _ocr = new Tesseract(dataPath, "eng", OcrEngineMode.TesseractOnly);
+                _ocr = new Tesseract(dataPath, "eng", OcrEngineMode.TesseractOnly);
             _ocr.SetVariable("tessedit_char_whitelist", "ABCDEFGHIJKLMNOPQRSTUVWXYZ-1234567890");
         }
 
