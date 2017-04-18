@@ -23,7 +23,7 @@ namespace LPlateRecognition.UI.ViewModels
         {
             string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            _licensePlateDetector = new LicensePlateDetector(path + "\\..\\..\\tessdata");
+            _licensePlateDetector = new LicensePlateDetector(path + "\\..\\..\\..\\..\\tessdata");
         }
 
         public string LicensePlate
